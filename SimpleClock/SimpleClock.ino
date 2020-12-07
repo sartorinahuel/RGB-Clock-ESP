@@ -9,7 +9,7 @@ RTC_DS3231 rtc;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, PIN, NEO_GRB + NEO_KHZ800);
 
-int brillo=100;
+int brillo=10;
 int dia;
 int mes;
 int horas;
@@ -131,13 +131,13 @@ void ledClock(){
     horas = horas - 12;
     tarde = true;
   }
-   if (tarde = false){
-  strip.setPixelColor(0, 255, 255, 255); //prende LED como PM
-    strip.show();
-  }else{
+  //  if (tarde = false){
+  // strip.setPixelColor(0, 255, 255, 255); //prende LED como PM
+  //   strip.show();
+  // }else{
   strip.setPixelColor(0, 0, 0, 0); //prende LED como AM
   strip.show();
-  }
+  // }
   
   hm = horas * 5;
   
@@ -147,7 +147,7 @@ void ledClock(){
     if (hArrow == i){
       if (hArrow <= hm){
         if (hArrow <= minutos){
-          strip.setPixelColor(i, 255, 0, 255);
+          strip.setPixelColor(i, 255, 0, 55);
           strip.show();
           hArrow = hArrow + 5;
           step = true;
